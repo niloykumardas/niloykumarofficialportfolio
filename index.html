@@ -50,13 +50,13 @@
     color: var(--white);
     font-family: 'Rajdhani', sans-serif;
     overflow-x: hidden;
-    cursor: none;
+    cursor: default;
   }
 
-  /* Custom cursor */
-  .cursor { position:fixed; width:10px; height:10px; background:var(--neon); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform 0.1s; }
-  .cursor-ring { position:fixed; width:36px; height:36px; border:1.5px solid var(--neon); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:all 0.18s ease; opacity:0.7; }
-
+  #cursor, #cursor-ring {
+    display: none !important;
+}
+  
   /* Scrollbar */
   ::-webkit-scrollbar { width:4px; }
   ::-webkit-scrollbar-track { background:var(--dark); }
@@ -527,7 +527,6 @@
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-logo">
