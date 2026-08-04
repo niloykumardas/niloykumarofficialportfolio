@@ -441,57 +441,63 @@
   .nav-toggle { display:none; background:none; border:1px solid rgba(170,255,0,0.3); padding:0.4rem 0.6rem; cursor:pointer; }
   .nav-toggle svg { width:20px; height:20px; color:var(--neon); }
 
-  @media(max-width:1200px) {
-    .hero-3d { display:none; }
-    /* কন্টেইনার এবং অ্যাট্রাক্টিভ বর্ডার স্টাইল */
+  /* Hero Container Fix */
+#hero, .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Photo Wrapper Size Limit */
+.hero-photo-wrap {
+    flex: 0 0 auto;
+    width: 320px;
+    max-width: 100%;
+}
+
+/* Glowing Border Container */
 .hero-photo-container {
     position: relative;
-    display: inline-block;
+    width: 100%;
     border-radius: 20px;
-    padding: 6px; /* বর্ডারের পুরুত্ব */
-    
-    /* আপনার ওয়েবসাইটের থিম অনুযায়ী আকর্ষণীয় গ্লোয়িং বর্ডার */
+    padding: 5px;
     background: linear-gradient(135deg, #aaff00, rgba(170, 255, 0, 0.2));
-    box-shadow: 0 0 30px rgba(170, 255, 0, 0.5), 
-                0 0 60px rgba(170, 255, 0, 0.2);
+    box-shadow: 0 0 25px rgba(170, 255, 0, 0.4), 
+                0 0 50px rgba(170, 255, 0, 0.15);
     transition: all 0.3s ease;
 }
 
-/* ছবি রেসপন্সিভ ও বর্ডার ফিট করার স্টাইল */
+/* Image Fix */
 .hero-photo-img {
-    width: 320px;
-    height: 320px;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 350px !important;
     object-fit: cover;
     object-position: top center;
     border-radius: 16px;
     display: block;
 }
 
-/* মাউস হোভার করলে বর্ডার একটু বেশি গ্লো করবে */
 .hero-photo-container:hover {
-    box-shadow: 0 0 40px rgba(170, 255, 0, 0.7), 
-                0 0 70px rgba(170, 255, 0, 0.3);
+    box-shadow: 0 0 35px rgba(170, 255, 0, 0.6), 
+                0 0 60px rgba(170, 255, 0, 0.25);
     transform: translateY(-3px);
 }
 
-/* 📱 মোবাইলের জন্য রেসপন্সিভ কোড */
+/* 📱 Responsive Adjustment for Mobile */
 @media (max-width: 900px) {
-    .hero-photo-wrap {
-        position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        margin: 2rem auto 0 auto;
-        display: flex;
-        justify-content: center;
-        width: 100%;
+    #hero, .hero-section {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .hero-photo-img {
-        width: 100%;
-        max-width: 260px;
-        height: auto;
-        aspect-ratio: 1 / 1;
+    .hero-photo-wrap {
+        width: 250px;
+        margin: 2rem auto 0 auto;
     }
 }
 
