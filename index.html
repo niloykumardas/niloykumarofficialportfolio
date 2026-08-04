@@ -520,6 +520,32 @@
     grid-template-columns: 1fr !important;
   }
 }
+  @media (max-width: 768px) {
+  /* ৩ লাইনের হ্যামবার্গার বাটনটি মোবাইলে দেখাবে */
+  .nav-toggle {
+    display: block !important;
+  }
+
+  /* মোবাইলে স্বাভাবিক লিংকগুলো লুকিয়ে যাবে */
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(170, 255, 0, 0.2);
+    display: none; /* ডিফল্টভাবে হাইড থাকবে */
+  }
+
+  /* মেনু ওপেন হলে লিংকগুলো দেখাবে */
+  .nav-links.active {
+    display: flex !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1082,6 +1108,21 @@
       cta.style.display = 'none';
     }
   }
+  const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // মেনুর কোনো লিংকে ক্লিক করলে যেন মেনুটি আবার বন্ধ হয়ে যায়
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+}
 </script>
 </body>
 </html>
