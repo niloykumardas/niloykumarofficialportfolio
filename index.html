@@ -443,39 +443,21 @@
 
   @media(max-width:1200px) {
     .hero-3d { display:none; }
-    .hero-photo-wrap { display:none; }
-    .skills-layout { grid-template-columns:1fr; gap:3rem; }
-  }
-  @media(max-width:900px) {
-    nav { padding:1rem 2rem; }
-    section { padding:4rem 2rem; }
-    #hero { padding:0 2rem; padding-top:5rem; }
-    .projects-grid { grid-template-columns:1fr; }
-    .testi-grid { grid-template-columns:1fr; }
-    .contact-wrap { grid-template-columns:1fr; gap:3rem; }
-    footer { padding:2rem; flex-direction:column; text-align:center; }
-    .nav-links, .nav-cta { display:none; }
-    .nav-toggle { display:flex; }
-  }
-
-  .hero-photo-wrap {
-    position:absolute; right:5rem; top:50%;
-    transform:translateY(-50%);
-    z-index:2;
-    display:flex; align-items:center; justify-content:center;
-  }
-  
+    /* কন্টেইনার এবং অ্যাট্রাক্টিভ বর্ডার স্টাইল */
 .hero-photo-container {
     position: relative;
     display: inline-block;
     border-radius: 20px;
-    padding: 5px;
+    padding: 6px; /* বর্ডারের পুরুত্ব */
+    
+    /* আপনার ওয়েবসাইটের থিম অনুযায়ী আকর্ষণীয় গ্লোয়িং বর্ডার */
     background: linear-gradient(135deg, #aaff00, rgba(170, 255, 0, 0.2));
-    box-shadow: 0 0 25px rgba(170, 255, 0, 0.4), 
-                0 0 50px rgba(170, 255, 0, 0.15);
+    box-shadow: 0 0 30px rgba(170, 255, 0, 0.5), 
+                0 0 60px rgba(170, 255, 0, 0.2);
     transition: all 0.3s ease;
 }
 
+/* ছবি রেসপন্সিভ ও বর্ডার ফিট করার স্টাইল */
 .hero-photo-img {
     width: 320px;
     height: 320px;
@@ -485,12 +467,14 @@
     display: block;
 }
 
+/* মাউস হোভার করলে বর্ডার একটু বেশি গ্লো করবে */
 .hero-photo-container:hover {
-    box-shadow: 0 0 35px rgba(170, 255, 0, 0.6), 
-                0 0 60px rgba(170, 255, 0, 0.25);
+    box-shadow: 0 0 40px rgba(170, 255, 0, 0.7), 
+                0 0 70px rgba(170, 255, 0, 0.3);
     transform: translateY(-3px);
 }
 
+/* 📱 মোবাইলের জন্য রেসপন্সিভ কোড */
 @media (max-width: 900px) {
     .hero-photo-wrap {
         position: relative;
