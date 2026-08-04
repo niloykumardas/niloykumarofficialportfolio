@@ -44,6 +44,10 @@
     --gray2: #555;
   }
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  img, svg, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
   html { scroll-behavior: smooth; }
   body {
     background: var(--dark);
@@ -66,7 +70,7 @@
   nav {
     position:fixed; top:0; left:0; right:0; z-index:1000;
     display:flex; align-items:center; justify-content:space-between;
-    padding:1rem 4rem;
+    padding: 1rem 1.5rem;
     background: rgba(5,5,5,0.85);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(170,255,0,0.1);
@@ -500,7 +504,22 @@
         margin: 2rem auto 0 auto;
     }
 }
-
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 1.25rem !important;
+  }
+  #hero {
+    padding: 6rem 1.25rem 3rem 1.25rem !important;
+  }
+  .contact-wrap, 
+  .skills-layout {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 </head>
 <body>
